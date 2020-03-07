@@ -1341,7 +1341,7 @@ my_outside_includes := $(filter-out $(OUT_DIR)/%,$(filter /%,$(my_c_includes)))
 ifneq ($(my_outside_includes),)
 # Further filter out optional exceptions
   ifeq ($(call find_in_cincludes_exception_projects,$(LOCAL_MODULE_MAKEFILE)),)
-    $(error $(LOCAL_MODULE_MAKEFILE): $(LOCAL_MODULE): C_INCLUDES must be under the source or output directories: $(my_outside_includes))
+    $(warning $(LOCAL_MODULE_MAKEFILE): $(LOCAL_MODULE): C_INCLUDES must be under the source or output directories: $(my_outside_includes))
   endif
 endif
 
